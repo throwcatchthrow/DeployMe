@@ -1,0 +1,166 @@
+<htm>
+<head>
+
+</head>
+
+<body>
+    <form class="form-horizontal" style="padding:40px">
+        <div class="form-group">
+            <label class="h2">User Profile</label>
+        </div>
+
+        <div class="form-group">
+            <label for="first" class="control-label col-md-2">First Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="first" placeholder="First Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="last" class="control-label col-md-2">Last Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="last" placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="control-label col-md-2">Email</label>
+            <div class="col-md-8">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone" class="control-label col-md-2">Phone</label>
+            <div class="col-md-8">
+                <input type="Phone" class="form-control" id="phone" placeholder="Phone Number">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="agency" class="control-label col-md-2">Agency</label>
+            <div class="col-md-8">
+                <select class="form-control" id="agency"></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="job_series" class="control-label col-md-2">Job Series</label>
+            <div class="col-md-8">
+                <select class="form-control" id="job_series"></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="employee_type" class="control-label col-md-2">Employee Type</label>
+            <div class="col-md-8">
+                <select class="form-control" id="employee_type"></select>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="office" class="control-label col-md-2">Office Name</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="office" placeholder="Office Name">
+            </div>
+        </div>
+
+        <div class="form-group" >   
+            <label for="language_container" class="control-label col-md-2">Languages</label>
+            <div id="language_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                <table class="table table-sm table-bordered  table-striped table-hover "  id="language_table">
+                    <tr>
+                        <th>Language</th>
+                        <th>Proficiency</th>
+                        <th> </th>
+
+                    </tr>
+                    <tr>
+                        <td><select class="form-control" name="select_language"></select></td>
+                        <td><select class="form-control" name="select_proficiency"></select></td>
+                        <td align="center"><button type="button" class="btn btn-link del">Remove</button></td>
+                    </tr>
+                </table>
+                <button type="button" onclick="addRow()" class="btn btn-link">+ Add New</button>
+            </div>
+        </div>
+    
+
+        <div class="form-group" >   
+            <label for="communication_container" class="control-label col-md-2">Health Communication Skills</label>
+            <div id="communication_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;"></div>
+        </div>   
+
+        <div class="form-group" >   
+            <label for="partnership_container" class="control-label col-md-2">Partnership Skills</label>
+            <div id="partnership_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;"></div>
+        </div>    
+
+        <div class="form-group" >   
+            <label for="experience_container" class="control-label col-md-2">Emergency Response Experience </label>
+            <div id="experience_container" class="col-md-8" style="border:1px solid #cecece; padding:10px;"></div>
+        </div>  
+
+        <div class="form-group" >   
+            <label for="training_container" class="control-label col-md-2">Relevant Training</label>
+            <div id="training_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;"></div>
+        </div>  
+        <div class="form-group" >   
+            <label for="expertise_container" class="control-label col-md-2">Subject Area of Expertise</label>
+            <div id="expertise_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;"></div>
+        </div> 
+
+
+        <div class="form-group">
+            <label for="availability" class="control-label col-md-2">Deployment Availability</label>
+            <div class="col-md-8">
+                <input type="availability" class="form-control" id="first" placeholder="Available" readonly>
+            </div>
+        </div>
+
+        <div class="form-group" >   
+            <label for="deployment_container" class="control-label col-md-2">Deployment History</label>
+            <div id="deployment_container" class=" col-md-8" style="border:1px solid #cecece; padding:10px;">
+                <table id="deployment_table" class="table table-bordered table-sm table-striped table-hover ">
+                    <tr>
+                        <th> </th>
+                        <th>Response</th>
+                        <th>Deployed To</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button onclick="setDropdowns()" type="submit" class="btn btn-primary col-12">Save</button>
+            </div>
+        </div>
+
+
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script src="DeployMe_Profile.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', setupForm(), false);
+    </script>
+
+
+</body>
